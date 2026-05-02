@@ -1,0 +1,18 @@
+services:
+  mrd:
+    build: .
+    image: model-regression-detection:dev
+    environment:
+      MRD_OPENAI_API_KEY: ${MRD_OPENAI_API_KEY:?set MRD_OPENAI_API_KEY in .env}
+      MRD_TARGET_MODEL: ${MRD_TARGET_MODEL:-gpt-4o-mini}
+      MRD_JUDGE_MODEL: ${MRD_JUDGE_MODEL:-gpt-4o}
+      MRD_DB_PATH: /data/mrd.sqlite3
+      MRD_SLACK_WEBHOOK_URL: ${MRD_SLACK_WEBHOOK_URL:-}
+    volumes:
+      - ./:/work
+      - mrd-data:/data
+    working_dir: /work
+    command: ["--help"]
+
+volumes:
+  mrd-data:

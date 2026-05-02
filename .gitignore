@@ -1,0 +1,39 @@
+# venv
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# project artifacts
+mrd.sqlite3
+mrd.sqlite3-journal
+mrd.sqlite3-wal
+mrd.sqlite3-shm
+reports/
+*.log
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# secrets
+.env
+.env.*
+!.env.example

@@ -1,0 +1,18 @@
+version: v1
+description: |
+  Classifies an inbound customer support email into one of four categories.
+  Used as the canonical example for the regression-detection harness.
+temperature: 0.0
+max_output_tokens: 32
+system: |
+  You are an email classifier for a SaaS company's support inbox. Categorize each
+  message into EXACTLY ONE of the following labels and respond with the label only,
+  no punctuation or explanation:
+    - billing
+    - bug_report
+    - feature_request
+    - general_inquiry
+user_template: |
+  Subject: ${subject}
+  Body: ${input}
+  Label:
